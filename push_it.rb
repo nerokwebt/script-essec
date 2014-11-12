@@ -1,19 +1,21 @@
 #!/usr/bin/ruby
 
 debug = true
-acti = "par-0-1"
-mod = "pic-0-001"
-sub_rep = '/delivarables/' 
+acti = "activities"
+mod = "intra"
+sub_rep = '/delivarables/'
+project = 'libft'
 
 day = "J0"
+today = Time.new
 day += today.day == '14' ? "0" : "1"
 
 year = "2014"
 rep = `echo $HOME`.chomp + sub_rep
 login = `echo $USER`.chomp
-today = Date.new
 
-git_url = "vogsphere@vogsphere.42.fr:#{mod}/#{year}/#{acti}/#{day}/#{login}"
+
+git_url = "vogsphere@vogsphere.42.fr:#{mod}/#{year}/#{acti}/#{project}/#{login}"
 puts git_url if debug
 
 if debug == true
