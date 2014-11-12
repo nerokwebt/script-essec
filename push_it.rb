@@ -15,7 +15,7 @@ rep = `echo $HOME`.chomp + sub_rep
 login = `echo $USER`.chomp
 
 
-git_url = "vogsphere@vogsphere.42.fr:#{mod}/#{year}/#{acti}/#{project}/#{login}5"
+git_url = "vogsphere@vogsphere.42.fr:#{mod}/#{year}/#{acti}/#{project}/#{login}"
 puts git_url if debug
 
 if debug == true
@@ -31,7 +31,7 @@ else
 	puts "Are you sure you have only the file you want to push everything inside #{rep}#{day}? (no garbage, no tmp file remaining) [y/n]"
 	reply = STDIN.gets.chomp
 	if reply == "y"
-		system("cd #{rep}#{day}; git add .; git commit -m 'push #{Time.new.strftime("%H%M%S")}'; git push origin master")
+		system("cd #{rep}#{day}; git pull origin master ; git add .; git commit -m 'push #{Time.new.strftime("%H%M%S")}'; git push origin master")
 	else
 		puts "doing strictly nothing"
 	end
