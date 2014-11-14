@@ -1,10 +1,10 @@
 #!/usr/bin/ruby
 
 debug = false
-acti = "activities"
-mod = "intra"
+acti = "par-0-1"
+mod = "essec-0-001"
 sub_rep = '/deliverables/'
-project = 'libft'
+project = 'jshell0'
 
 day = "J0"
 today = Time.new
